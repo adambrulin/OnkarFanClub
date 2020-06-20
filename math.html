@@ -1,0 +1,119 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+			<title>
+				Onkar
+			</title>
+		<link href="./style.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="headerBackground">
+			<div class="main">
+				<div class="headerTitle">
+					<a href="./onkar.html">
+						Onkar K Singh Fan Club
+					</a>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class = "headerTitle2">
+			<br>
+			Onkar's Math Tutoring
+			<br><br>
+		</div>
+
+
+		<div class="math">
+			First Name: <input id="textBoxFirstName" type="text" name="textBoxFirstName">
+			<br>
+			Last Name: <input id="textBoxLastName" type="text" name="textBoxLastName">
+			<br>
+			Subject You Need Help With: <input id="textSubject" type="text" name="textSubject">
+			<br>
+			<Input class='button' id='submitbutton' type='button' value='SUBMIT' onclick='stupidIdiot()'/>
+			<br><br>
+				<div id="printHere">
+					What do you need help with?
+				</div>
+			<br><br><br>		
+
+			First Number: <input id="textBoxFirstNumber" type="text" name="textBoxFirstNumber">
+			<br>
+			Second Number: <input id="textBoxSecondNumber" type="text" name="textBoxSecondNumber">
+			<br><br>
+			<Input class='button' id='calcAddButton' type='button' value='Add' onclick='calcAddButton()'/>
+			<Input class='button' id='calcSubButton' type='button' value='Subtract' onclick='calcSubButton()'/>
+			<Input class='button' id='calcMultButton' type='button' value='Multiply' onclick='calcMultButton()'/>
+			<Input class='button' id='calcDivButton' type='button' value='Divide' onclick='calcDivButton()'/>
+
+			<br><br>
+			<label id="calcAnswer">
+				
+			</label>
+
+		</div>
+
+		
+
+
+	</body>
+
+
+</html>
+
+<script type="text/javascript">
+	function stupidIdiot(){
+		var myname = document.getElementById("textBoxFirstName").value;
+		let mylastname = document.getElementById("textBoxLastName").value;
+		let mysubject = document.getElementById("textSubject").value;
+
+		let newString = "My name is " + myname + " " + mylastname + " and I need help with " + mysubject + " because I'm a stupid idiot.";
+
+		document.getElementById("printHere").innerHTML = newString;
+	}
+
+	function getBothNumbers(){
+		let firstNumber = parseInt(document.getElementById("textBoxFirstNumber").value);
+		let secondNumber = parseInt(document.getElementById("textBoxSecondNumber").value);
+		return [firstNumber, secondNumber];
+	}
+	function calcAddButton(){
+		let firstNumber = getBothNumbers()[0];
+		let secondNumber = getBothNumbers()[1];
+		var rand1 = Math.floor(Math.random()*5);
+		var rand2 = Math.floor(Math.random()*5);
+			
+		document.getElementById("calcAnswer").innerHTML = firstNumber + secondNumber + rand1 - rand2;
+	}
+
+	function calcSubButton(){
+		let firstNumber = getBothNumbers()[0];
+		let secondNumber = getBothNumbers()[1];
+		var rand1 = Math.floor(Math.random()*5);
+		var rand2 = Math.floor(Math.random()*5);
+		
+		document.getElementById("calcAnswer").innerHTML = firstNumber - secondNumber + rand1 - rand2;
+}
+	function calcMultButton(){
+		let firstNumber = getBothNumbers()[0];
+		let secondNumber = getBothNumbers()[1];
+		var rand1 = Math.floor(Math.random()*5);
+		var rand2 = Math.floor(Math.random()*5);
+			
+		document.getElementById("calcAnswer").innerHTML = firstNumber * secondNumber + rand1 - rand2;
+	}
+	function calcDivButton(){
+		let firstNumber = getBothNumbers()[0];
+		let secondNumber = getBothNumbers()[1];
+		var rand1 = Math.floor(Math.random()*5);
+		var rand2 = Math.floor(Math.random()*5);
+			
+		document.getElementById("calcAnswer").innerHTML = (firstNumber / secondNumber) + rand1 - rand2;
+	}
+
+</script>
